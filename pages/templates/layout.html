@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'src/styles/layout.css' %}">
+{% endblock %}
+
+{% block layout %}
+<main>
+  <div class="root">
+    <div class="base-container">
+      <div class="container">
+        <header class="flex flex-row items-center">
+          <button id="back-btn" class="back-btn">{% block backbtn %}{% endblock backbtn %}</button>
+          <h1 class="md:text-5xl sm:text-3xl text-xl">
+            {% block maintitle %}{% endblock maintitle %}
+          </h1>
+        </header>
+        {% block component %}{% endblock component %}
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block tail %}
+<script>
+  $(document).ready(function() {
+    // 버튼 클릭 시 뒤로 가는 함수
+    $("#back-btn").click(function() {
+      if ($(this).children().length > 0) {
+        window.history.back();
+      }
+    });
+  });
+</script>
+{% endblock %}

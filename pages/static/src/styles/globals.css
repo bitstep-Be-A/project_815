@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'BMJUA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'BMJUA';
+}
+
+html, body { width: 100%; height: 100% }
+
+main {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.root {
+  position: relative;
+  background-image: url("/static/images/doknipmun.jpeg");
+  background-size: cover;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.root::before {
+  content: "";
+  opacity: 0.7;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color:white;
+}
+
+.base-container {
+  position: relative;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .base-container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 767px) {
+  .base-container {
+    width: 100%;
+  }
+}
+
+.container {
+  padding-top: 64px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (max-height: 660px) {
+  img {
+    display: none;
+  }
+}
+
+.text-main-blue {
+  color: #386AE9;
+}
+
+.bg-main-blue {
+  background-color: #386AE9;
+}

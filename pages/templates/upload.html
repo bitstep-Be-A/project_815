@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block csrf_token %}
+  {% csrf_token %}
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'src/styles/upload.css' %}">
+{% endblock %}
+
+{% block backbtn %}
+<div class="w-full h-full flex justify-center items-center text-3xl">
+  &lt;
+</div>
+{% endblock %}
+{% block maintitle %}
+사진 업로드(파일 선택, 파일 드래그)
+{% endblock %}
+
+{% block component %}
+<div class="w-full h-full">
+  <section id="drop-box-section" class="w-full h-full flex flex-col justify-center items-center">
+    <button id="drop-box" class="drop-box flex flex-col justify-center items-center" data-slug="{{ slug }}">
+      <img src="{% static 'images/drive_folder_upload.png' %}" alt="file upload">
+      <div class="text-center text-lg" style="color: #B7B7B7;">
+        <p>파일 선택 또는 드래그</p>
+        <p>해주세요</p>
+      </div>
+    </button>
+  </section>
+  <section id="additional-section" class="hidden w-full h-full flex flex-col justify-center items-center">
+    <div class="w-56 flex flex-row justify-between mb-12 text-xl">
+      <label>
+        <input type="radio" name="sex" value="M" checked> 남
+      </label>
+      <label>
+        <input type="radio" name="sex" value="F"> 여
+      </label>
+    </div>
+    <button id="submit-btn" class="w-48 py-3 bg-main-blue text-white text-xl rounded-lg">
+      선택 완료
+    </button>
+  </section>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'src/js/upload.js' %}"></script>
+{% endblock %}

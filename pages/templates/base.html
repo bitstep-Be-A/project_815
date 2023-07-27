@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI가 생성해주는 독립운동가의 모습과 함께 잊지 못할 추억의 인생샷을 남기세요~!">
+  {% block head %}{% endblock head %}
+  {% block style %}{% endblock style %}
+  <link rel="stylesheet" href="{% static 'src/styles/tailwindcss.css' %}">
+  <link rel="stylesheet" href="{% static 'src/styles/globals.css' %}">
+  <title>독립운동가와 함께 인생샷을 남겨보세요</title>
+  {% block csrf_token %}{% endblock csrf_token %}
+</head>
+
+<body>
+  {% block layout %}{% endblock layout %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+  {% block tail %}{% endblock tail %}
+  {% block js %}{% endblock js %}
+</body>
+
+</html>

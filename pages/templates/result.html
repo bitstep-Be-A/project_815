@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block maintitle %}
+촬영이 완료되었어요!
+{% endblock %}
+
+{% block component %}
+<div class="w-full h-full flex lg:flex-row flex-col items-center justify-center">
+  <img src="{% static 'images/selfie_example.png' %}" alt="셀카">
+</div>
+{% endblock %}

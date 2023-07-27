@@ -1,0 +1,18 @@
+.drop-box {
+  width: 350px;
+  height: 350px;
+  border-width: 2px;
+  border-color: black;
+  border-style: dashed;
+  background-color: #D9D9D9;
+  border-radius: 24px;
+}
+
+.drop-box:hover {
+  background-color: black;
+  opacity: 0.4;
+}
+
+.drop-box:focus {
+  outline: none;
+}

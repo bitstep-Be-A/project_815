@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'src/styles/intro.css' %}">
+{% endblock %}
+
+
+{% block maintitle %}
+독립운동가와 함께 인생샷 남기기
+{% endblock %}
+
+{% block component %}
+<div class="w-full h-full flex items-center justify-center">
+  <div class="w-full flex flex-col">
+    <div id="indicator" class="w-full flex md:hidden flex-row justify-center mb-8">
+      <span id="selfie-select-button" class="underline text-main-blue cursor-pointer mr-10">셀카찍기</span>
+      <span id="group-select-button" class="cursor-pointer ml-10">단체사진찍기</span>
+    </div>
+    <div class="w-full flex flex-row justify-center md:justify-between lg:px-24">
+      <div id="selfie-item" class="flex flex-col items-center">
+        <img src="{% static 'images/selfie_example.png' %}" alt="셀카">
+        <a class="mt-20" href="{% url 'page:people' %}">
+          <div class="link-button-style text-white text-xl text-center">
+            셀카찍기
+          </div>
+        </a>
+      </div>
+      <div id="group-item" class="md:flex hidden flex-col items-center">
+        <img src="{% static 'images/group.png' %}" alt="단체사진">
+        <a class="mt-20" href="{% url 'page:upload' slug='group' %}">
+          <div class="link-button-style text-white text-xl text-center">
+            단체사진찍기
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'src/js/intro.js' %}"></script>
+{% endblock %}

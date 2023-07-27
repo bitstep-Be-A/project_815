@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'src/styles/people.css' %}">
+{% endblock %}
+
+{% block backbtn %}
+<div class="w-full h-full flex justify-center items-center text-3xl">
+  &lt;
+</div>
+{% endblock %}
+{% block maintitle %}
+인물을 골라주세요
+{% endblock %}
+
+{% block component %}
+<div class="w-full h-full">
+  <ul class="overflow-auto mt-12">
+    {% for person in people %}
+      <a href="{% url 'page:upload' slug='selfie' %}" class="person-link-btn focus:outline-none" data-person-id="{{ person.id }}">
+        <li class="flex items-center h-full bg-gray-200 border">
+          <img src="{% static person.image_url %}" alt="{{ person.name }}">
+          <div class="hidden w-full h-full bg-gray-300"></div>
+        </li>
+      </a>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'src/js/people.js' %}"></script>
+{% endblock %}
