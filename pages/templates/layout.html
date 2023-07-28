@@ -7,12 +7,16 @@
 
 {% block layout %}
 <main>
+  <div class="background-img">
+    <div class="background-wrapper"></div>
+    <img class="w-full h-full" src="{% static 'images/doknipmun.jpeg' %}" alt="background img">
+  </div>
   <div class="root">
     <div class="base-container">
       <div class="container">
         <header class="flex flex-row items-center">
           <button id="back-btn" class="back-btn">{% block backbtn %}{% endblock backbtn %}</button>
-          <h1 class="md:text-5xl sm:text-3xl text-xl">
+          <h1 class="md:text-5xl sm:text-3xl text-2xl">
             {% block maintitle %}{% endblock maintitle %}
           </h1>
         </header>

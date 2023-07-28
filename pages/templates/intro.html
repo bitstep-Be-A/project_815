@@ -11,15 +11,31 @@
 {% endblock %}
 
 {% block component %}
-<div class="w-full h-full flex items-center justify-center">
-  <div class="w-full flex flex-col">
+<div class="w-full h-full flex flex-col items-center">
+  <div class="text-lg sm:text-xl md:text-3xl text-center mt-24 mb-12">
+    <p>내 사진을 올리고,</p>
+    <p>독립운동가분들과 찍은 셀카를 공유하세요</p>
+  </div>
+  <div class="selfie-flow">
+    <img src="{% static 'images/selfie_flow.png' %}" alt="selfie_flow">
+  </div>
+  <div class="text-lg sm:text-xl md:text-3xl text-center mt-16 mb-12">
+    <p>독립운동가 분들과 즐거운 추억을 남겨보아요~!</p>
+  </div>
+  <div class="selfie-examples">
+    <img src="{% static 'images/selfie_example_kimgoo.png' %}" alt="김구" class="selfie-example hidden xl:block">
+    <img src="{% static 'images/selfie_example_yugwansoon.png' %}" alt="유관순" class="selfie-example xl:ml-8">
+    <img src="{% static 'images/selfie_example_anjunggeun.png' %}" alt="안중근" class="selfie-example ml-8">
+    <img src="{% static 'images/selfie_example_anchangho.png' %}" alt="안창호" class="selfie-example ml-8 hidden xl:block">
+  </div>
+  <div class="w-full flex flex-col mt-24">
     <div id="indicator" class="w-full flex md:hidden flex-row justify-center mb-8">
       <span id="selfie-select-button" class="underline text-main-blue cursor-pointer mr-10">셀카찍기</span>
       <span id="group-select-button" class="cursor-pointer ml-10">단체사진찍기</span>
     </div>
-    <div class="w-full flex flex-row justify-center md:justify-between lg:px-24">
+    <div class="w-full flex flex-row justify-center md:justify-between lg:px-48 mb-24">
       <div id="selfie-item" class="flex flex-col items-center">
-        <img src="{% static 'images/selfie_example.png' %}" alt="셀카">
+        <img src="{% static 'images/selfie_example_younbonggil.png' %}" alt="셀카">
         <a class="mt-20" href="{% url 'page:people' %}">
           <div class="link-button-style text-white text-xl text-center">
             셀카찍기
