@@ -112,21 +112,19 @@ $(function () {
   function openFileInput() {
     const input = $('<input type="file">');
     input.attr('accept', '.jpg, .jpeg, .png');
+     // File input에 capture 속성을 추가하여 사진 촬영을 지정합니다.
+    // capture 속성의 값으로 'user'를 사용하면 사용자가 카메라로 사진 촬영할 수 있습니다.
+    // 'environment'를 사용하면 후면 카메라로 촬영할 수 있습니다.
+    input.attr('capture', 'camera');
+    // input 요소를 화면에 표시하지 않고 숨겨둡니다.
+    input.css('display', 'none');
+    // body 요소에 input 요소를 추가합니다.
+    $('body').append(input);
+
     input.on('change', function (event) {
       form.pushFile(event.target.files);
       formSection.next();
     });
-
-    // File input에 capture 속성을 추가하여 사진 촬영을 지정합니다.
-    // capture 속성의 값으로 'user'를 사용하면 사용자가 카메라로 사진 촬영할 수 있습니다.
-    // 'environment'를 사용하면 후면 카메라로 촬영할 수 있습니다.
-    input.attr('capture', 'user');
-
-    // input 요소를 화면에 표시하지 않고 숨겨둡니다.
-    input.css('display', 'none');
-
-    // body 요소에 input 요소를 추가합니다.
-    $('body').append(input);
 
     input.trigger('click');
   }
