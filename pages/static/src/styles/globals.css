@@ -38,6 +38,10 @@
   }
 }
 
+::file-selector-button {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0;
